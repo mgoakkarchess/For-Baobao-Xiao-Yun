@@ -148,41 +148,35 @@ if (!document.createElement('canvas').getContext) {
 	$("#copyright").css("bottom", "10px");
 	document.execCommand("stop");
 } else {
-	setTimeout(function () {
-		startHeartAnimation();
-	}, 5000);
-
-	timeElapse(together);
-	setInterval(function () {
-		timeElapse(together);
-	}, 500);
-
-	adjustCodePosition();
-	$("#code").typewriter();
+	// Wait for password before starting the experience
 }
 </script>
 	<script type="text/javascript">
 function checkPassword() {
-    var password = document.getElementById("passwordInput").value;
+	var password = document.getElementById("passwordInput").value;
 
-    if (password === "YOURPASSWORD") {
+	if (password === "baobao&koko") {
 
-        document.getElementById("passwordScreen").style.display = "none";
+		// Hide password screen
+		document.getElementById("passwordScreen").style.display = "none";
 
-        // Start the experience AFTER password entry
-        setTimeout(function () {
-            startHeartAnimation();
-        }, 5000);
+		// Now start everything
+		setTimeout(function () {
+			startHeartAnimation();
+		}, 5000);
 
-        timeElapse(together);
+		timeElapse(together);
 
-        setInterval(function () {
-            timeElapse(together);
-        }, 500);
+		setInterval(function () {
+			timeElapse(together);
+		}, 500);
 
-        adjustCodePosition();
-        $("#code").typewriter();
-    }
+		adjustCodePosition();
+		$("#code").typewriter();
+
+	} else {
+		document.getElementById("wrongPassword").style.display = "block";
+	}
 }
 </script>
 <div style="text-align:center;clear:both">
